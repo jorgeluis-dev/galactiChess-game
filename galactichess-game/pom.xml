@@ -5,8 +5,17 @@
   <artifactId>galactichess-game</artifactId>
   <packaging>jar</packaging>
   <version>1.0.0</version>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
   <name>galactichess-game</name>
   <url>http://maven.apache.org</url>
+
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,4 +24,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+  <plugins>
+    <!--Plugin executar o game-->
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <mainClass>com.galactichess.App</mainClass>
+      </configuration>
+    </plugin>
+  </plugins>
+  </build>
 </project>
